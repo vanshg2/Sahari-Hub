@@ -13,7 +13,7 @@ const slides = [
     description: "Premium Bags & Elegant Suits",
     link: "/collections",
     linkText: "Shop Now",
-    image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&q=80&w=1000",
     bgColor: "bg-[#F3EBE7]",
     tagColor: "bg-[#D6A9A3]",
   },
