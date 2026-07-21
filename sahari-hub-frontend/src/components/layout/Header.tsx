@@ -83,9 +83,6 @@ export function Header() {
                 </span>
               )}
             </Link>
-            <Link href="/admin" className="hidden md:flex p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 items-center justify-center">
-              <User className="w-5 h-5" />
-            </Link>
           </div>
         </div>
       </header>
@@ -128,15 +125,6 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="p-6 border-t border-surface-container space-y-2">
-            <Link
-              href="/admin"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors"
-            >
-              <User className="w-5 h-5" /> Admin Panel
-            </Link>
-          </div>
         </div>
       </div>
 
