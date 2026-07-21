@@ -113,14 +113,14 @@ export function HeroCarousel() {
               </div>
 
               {/* Image Side */}
-              <div className="flex-1 relative w-full h-[250px] sm:h-[300px] md:h-full flex items-center justify-center p-2 sm:p-4 md:p-12 pb-8 md:pb-12">
-                <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl bg-white/40">
+              <div className="flex-1 relative w-full h-[260px] sm:h-[320px] md:h-full flex items-center justify-center p-2 sm:p-4 md:p-10 pb-8 md:pb-12">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-white/70 backdrop-blur-md border border-white/80 p-3 sm:p-5 flex items-center justify-center">
                   <Image 
                     src={slide.image} 
                     alt={slide.title} 
                     fill
-                    className={`object-cover object-top transition-transform duration-1000 ${
-                      index === currentSlide ? "scale-100" : "scale-105"
+                    className={`object-contain transition-transform duration-700 ${
+                      index === currentSlide ? "scale-100" : "scale-95"
                     }`}
                     priority={index === 0}
                     sizes="(max-width: 768px) 100vw, 50vw"
