@@ -2,16 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { contactApi } from "@/lib/api";
+import { ContactMessage } from "@/lib/types";
 import { Mail, MailOpen, CheckCircle, User, Clock } from "lucide-react";
-
-interface ContactMessage {
-  id: string;
-  name: string;
-  email: string;
-  message: string;
-  isRead: boolean;
-  createdAt: string;
-}
 
 export default function AdminMessagesPage() {
   const [messages, setMessages] = useState<ContactMessage[]>([]);

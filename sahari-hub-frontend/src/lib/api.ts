@@ -1,4 +1,4 @@
-import { PaginatedResponse, Product, Category, Order, Customer, DashboardStats, CartItem } from "./types";
+import { PaginatedResponse, Product, Category, Order, Customer, DashboardStats, CartItem, ContactMessage, Review } from "./types";
 
 const API_BASE = "/api";
 
@@ -109,14 +109,14 @@ export const authApi = {
 export const contactApi = {
   submit: (data: { name: string; email: string; message: string }) =>
     fetchApi<unknown>("/contact", { method: "POST", body: JSON.stringify(data) }),
-  list: () => fetchApi<unknown[]>("/contact"),
+  list: () => fetchApi<ContactMessage[]>("/contact"),
   markAsRead: (id: string) => fetchApi<unknown>(`/contact/${id}/read`, { method: "PATCH" }),
 };
 
 // Reviews
 export const reviewsApi = {
-  active: () => fetchApi<unknown[]>("/reviews"),
-  list: () => fetchApi<unknown[]>("/reviews/all"),
+  active: () => fetchApi<Review[]>("/reviews"),
+  list: () => fetchApi<Review[]>("/reviews/all"),
   create: (data: Record<string, unknown>) => fetchApi<unknown>("/reviews", { method: "POST", body: JSON.stringify(data) }),
   update: (id: string, data: Record<string, unknown>) => fetchApi<unknown>(`/reviews/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
   delete: (id: string) => fetchApi<void>(`/reviews/${id}`, { method: "DELETE" }),

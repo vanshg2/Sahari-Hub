@@ -2,18 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { reviewsApi } from "@/lib/api";
+import { Review } from "@/lib/types";
 import { Star, Plus, Trash2, Eye, EyeOff, X } from "lucide-react";
-
-interface Review {
-  id: string;
-  name: string;
-  location: string | null;
-  rating: number;
-  text: string;
-  product: string | null;
-  isActive: boolean;
-  createdAt: string;
-}
 
 function StarInput({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   return (

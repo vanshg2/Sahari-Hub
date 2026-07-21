@@ -122,3 +122,23 @@ export interface DashboardStats {
   lowStockProducts: { id: string; name: string; sku: string; stockQuantity: number }[];
   recentOrders: Order[];
 }
+
+export interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  isRead: boolean;
+  createdAt: string;
+}
+
+export interface Review {
+  id: string;
+  name: string;
+  location: string | null;
+  rating: number;
+  text: string;
+  product: string | null;
+  isActive: boolean;
+  createdAt: string;
+}
