@@ -23,73 +23,84 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   return (
-    <footer className="bg-surface-container w-full py-8 mt-auto border-t border-outline-variant/30">
+    <footer className="bg-surface-container w-full py-12 mt-auto border-t border-outline-variant/30">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter-desktop px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+        
         {/* Brand */}
-        <div className="col-span-1 md:col-span-1 flex flex-col justify-between items-start">
-          <Link href="/" className="flex items-center justify-center -ml-4 md:-ml-2 mb-3">
-            <img src="/logo.jpg" alt="Sahari Hub Logo" className="h-14 w-14 rounded-full object-cover shadow-sm border border-white/80" />
-          </Link>
-          
-          <a
-            href="https://www.instagram.com/sahari.hub/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-wider text-[#E1306C] bg-[#E1306C]/10 px-3 py-1.5 rounded-full hover:bg-[#E1306C] hover:text-white transition-all duration-300 mb-4"
-          >
-            <InstagramIcon className="w-4 h-4" />
-            <span>@sahari.hub</span>
-          </a>
+        <div className="col-span-1 flex flex-col justify-between items-start">
+          <div>
+            <Link href="/" className="flex items-center gap-3 mb-3">
+              <img 
+                src="/logo.jpg" 
+                alt="Sahari Hub Logo" 
+                className="h-14 w-14 rounded-full object-cover shadow-sm border border-white/80 shrink-0" 
+              />
+              <span className="font-cinzel text-[#3A2C27] text-lg font-semibold tracking-widest">
+                SAHARI HUB
+              </span>
+            </Link>
+            <p className="text-xs text-on-surface-variant/80 font-medium max-w-xs leading-relaxed">
+              Refined Luxury for the Modern Silhouette. Premium bags, dresses &amp; suits.
+            </p>
+          </div>
 
-          <div className="font-body-md text-xs text-on-surface-variant opacity-80 mt-auto">
+          <div className="font-body-md text-xs text-on-surface-variant opacity-80 mt-6 md:mt-0">
             © {new Date().getFullYear()} Sahari Hub. All Rights Reserved.
           </div>
         </div>
 
-        {/* Links */}
-        <div className="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Links Grid */}
+        <div className="col-span-1 md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          
+          {/* Company */}
           <div className="flex flex-col space-y-3">
-            <span className="font-label-sm text-primary uppercase tracking-widest mb-1">Company</span>
-            <Link href="/story" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
+            <span className="font-label-sm text-primary uppercase tracking-widest mb-1 font-bold text-xs">Company</span>
+            <Link href="/story" className="font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] hover:underline transition-all opacity-80 hover:opacity-100">
               Brand Story
             </Link>
-            <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
+            <Link href="/contact" className="font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] hover:underline transition-all opacity-80 hover:opacity-100">
               Contact Us
             </Link>
             <a
               href="https://www.instagram.com/sahari.hub/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-body-md text-on-surface-variant hover:text-[#E1306C] transition-all opacity-80 hover:opacity-100"
+              className="inline-flex items-center gap-2 font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] transition-all opacity-80 hover:opacity-100"
             >
-              <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
-              <span>Instagram</span>
+              <InstagramIcon className="w-4 h-4 text-[#3A2C27]" />
+              <span>Instagram (@sahari.hub)</span>
             </a>
           </div>
+
+          {/* Support */}
           <div className="flex flex-col space-y-3">
-            <span className="font-label-sm text-primary uppercase tracking-widest mb-1">Support</span>
-            <Link href="/shipping" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
+            <span className="font-label-sm text-primary uppercase tracking-widest mb-1 font-bold text-xs">Support &amp; Contact</span>
+            <Link href="/shipping" className="font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] hover:underline transition-all opacity-80 hover:opacity-100">
               Shipping &amp; Returns
             </Link>
-            <div className="flex items-center gap-2 font-body-md text-on-surface-variant opacity-80">
+            <div className="flex items-center gap-2 font-body-md text-sm text-on-surface-variant opacity-80">
               <Phone className="w-4 h-4 text-muted-gold shrink-0" />
               <span>+91 87450 92024</span>
             </div>
-            <div className="flex items-center gap-2 font-body-md text-on-surface-variant opacity-80">
+            <div className="flex items-center gap-2 font-body-md text-sm text-on-surface-variant opacity-80">
               <Mail className="w-4 h-4 text-muted-gold shrink-0" />
-              <a href="mailto:hubsahari@gmail.com" className="hover:text-secondary transition-colors">hubsahari@gmail.com</a>
+              <a href="mailto:hubsahari@gmail.com" className="hover:text-[#3A2C27] transition-colors">hubsahari@gmail.com</a>
             </div>
           </div>
+
+          {/* Legal */}
           <div className="flex flex-col space-y-3">
-            <span className="font-label-sm text-primary uppercase tracking-widest mb-1">Legal</span>
-            <Link href="/privacy" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
+            <span className="font-label-sm text-primary uppercase tracking-widest mb-1 font-bold text-xs">Legal</span>
+            <Link href="/privacy" className="font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] hover:underline transition-all opacity-80 hover:opacity-100">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
+            <Link href="/terms" className="font-body-md text-sm text-on-surface-variant hover:text-[#3A2C27] hover:underline transition-all opacity-80 hover:opacity-100">
               Terms of Service
             </Link>
           </div>
+
         </div>
+
       </div>
     </footer>
   );
