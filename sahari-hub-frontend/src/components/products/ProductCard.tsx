@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, Star } from "lucide-react";
+import { Heart, ShoppingBag, Minus, Plus } from "lucide-react";
 import { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/lib/cart-context";
@@ -13,8 +13,11 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
-  const { addItem } = useCart();
+  const { items, addItem, updateQuantity } = useCart();
   const primaryImage = product.images?.find((img) => img.isPrimary) || product.images?.[0];
+
+  const cartItem = items.find((i) => i.productId === product.id);
+  const quantityInCart = cartItem ? cartItem.quantity : 0;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -27,6 +30,14 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       sku: product.sku,
       stockQuantity: product.stockQuantity,
     });
+  };
+
+  const handleDecrease = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantityInCart > 0) {
+      updateQuantity(product.id, quantityInCart - 1);
+    }
   };
 
   return (
@@ -72,13 +83,37 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           )}
         </p>
 
-        <button
-          onClick={handleAddToCart}
-          className="w-full sm:w-[80%] flex items-center justify-center gap-2 border border-gray-200 text-gray-600 font-label-md text-[10px] sm:text-xs uppercase py-2.5 rounded-sm hover:border-[#D6A9A3] hover:text-[#D6A9A3] transition-colors duration-300"
-        >
-          <ShoppingBag className="w-3 h-3 sm:w-4 sm:h-4" />
-          Add to Cart
-        </button>
+        {quantityInCart > 0 ? (
+          <div className="w-full sm:w-[85%] flex items-center justify-between border border-[#3A2C27] bg-[#3A2C27] text-white font-label-md text-[10px] sm:text-xs uppercase py-1 px-2.5 rounded-sm shadow-sm">
+            <button
+              onClick={handleDecrease}
+              className="p-1 hover:bg-white/20 rounded transition-colors text-white flex items-center justify-center"
+              title="Decrease quantity"
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+            
+            <span className="font-bold tracking-wider text-xs">
+              {quantityInCart} IN CART
+            </span>
+
+            <button
+              onClick={handleAddToCart}
+              className="p-1 hover:bg-white/20 rounded transition-colors text-white flex items-center justify-center"
+              title="Increase quantity"
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={handleAddToCart}
+            className="w-full sm:w-[85%] flex items-center justify-center gap-2 border border-gray-200 text-gray-600 font-label-md text-[10px] sm:text-xs uppercase py-2.5 rounded-sm hover:border-[#D6A9A3] hover:text-[#D6A9A3] transition-colors duration-300"
+          >
+            <ShoppingBag className="w-3 h-3 sm:w-4 sm:h-4" />
+            Add to Cart
+          </button>
+        )}
       </div>
     </article>
   );
