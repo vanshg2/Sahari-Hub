@@ -1,5 +1,25 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+
+function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -7,9 +27,20 @@ export function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter-desktop px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
         {/* Brand */}
         <div className="col-span-1 md:col-span-1 flex flex-col justify-between items-start">
-          <Link href="/" className="flex items-center justify-center -ml-4 md:-ml-2 mb-4">
+          <Link href="/" className="flex items-center justify-center -ml-4 md:-ml-2 mb-3">
             <img src="/logo.jpg" alt="Sahari Hub Logo" className="h-14 w-14 rounded-full object-cover shadow-sm border border-white/80" />
           </Link>
+          
+          <a
+            href="https://www.instagram.com/sahari.hub/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-wider text-[#E1306C] bg-[#E1306C]/10 px-3 py-1.5 rounded-full hover:bg-[#E1306C] hover:text-white transition-all duration-300 mb-4"
+          >
+            <InstagramIcon className="w-4 h-4" />
+            <span>@sahari.hub</span>
+          </a>
+
           <div className="font-body-md text-xs text-on-surface-variant opacity-80 mt-auto">
             © {new Date().getFullYear()} Sahari Hub. All Rights Reserved.
           </div>
@@ -25,6 +56,15 @@ export function Footer() {
             <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100">
               Contact Us
             </Link>
+            <a
+              href="https://www.instagram.com/sahari.hub/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-body-md text-on-surface-variant hover:text-[#E1306C] transition-all opacity-80 hover:opacity-100"
+            >
+              <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
+              <span>Instagram</span>
+            </a>
           </div>
           <div className="flex flex-col space-y-3">
             <span className="font-label-sm text-primary uppercase tracking-widest mb-1">Support</span>

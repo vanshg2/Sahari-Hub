@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function StorefrontLayout({
   children,
@@ -11,6 +12,7 @@ export default function StorefrontLayout({
       <Header />
       <main className="flex-grow flex flex-col">{children}</main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
