@@ -1,110 +1,75 @@
 "use client";
 
 import { FadeIn } from "@/components/animations/FadeIn";
+import { FileText, CheckCircle2 } from "lucide-react";
 
 export default function TermsPage() {
   return (
     <>
       <section className="w-full pt-16 pb-8 px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center">
         <FadeIn>
-          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
-            Terms of Service
+          <h1 className="font-cinzel text-3xl md:text-5xl text-[#3A2C27] mb-4 font-semibold tracking-wide">
+            Terms &amp; Conditions
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Please read these terms carefully before using our website or placing an order.
+          <p className="font-body-lg text-body-lg text-gray-600 max-w-2xl mx-auto">
+            Welcome to Sahari Hub. By accessing or using our website, you agree to comply with these Terms &amp; Conditions.
           </p>
-          <p className="font-body-sm text-on-surface-variant mt-2">Last updated: July 2026</p>
         </FadeIn>
       </section>
 
-      <section className="w-full px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-24">
+      <section className="w-full px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-24 max-w-4xl">
         <FadeIn delay={0.1}>
-          <div className="bg-background border border-surface-container rounded-xl shadow-sm p-8 md:p-12">
-            <div className="font-body-md text-on-surface-variant leading-relaxed space-y-8">
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">1. Acceptance of Terms</h2>
-                <p>
-                  By accessing or using the Sahari Hub website (saharihub.com) and placing an order, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.
-                </p>
+          <div className="bg-white border border-[#EAE3DC] rounded-2xl shadow-sm p-6 md:p-12 space-y-8">
+            
+            {/* Header intro */}
+            <div className="flex items-start gap-4 pb-6 border-b border-[#F3EBE7]">
+              <div className="w-12 h-12 bg-[#F3EBE7] rounded-full flex items-center justify-center text-[#3A2C27] shrink-0">
+                <FileText className="w-6 h-6" />
               </div>
-
               <div>
-                <h2 className="font-headline-md text-primary mb-3">2. Products &amp; Pricing</h2>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>All product descriptions, images, and prices are as accurate as possible. However, slight variations in color, texture, or design may occur due to screen display differences.</li>
-                  <li>Prices are listed in Indian Rupees (INR) and include applicable taxes unless stated otherwise.</li>
-                  <li>Sahari Hub reserves the right to modify prices, product availability, and promotional offers without prior notice.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">3. Orders &amp; Payment</h2>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Placing an order constitutes an offer to purchase the selected products.</li>
-                  <li>We reserve the right to accept or decline any order at our discretion.</li>
-                  <li>Payment can be made via Cash on Delivery (COD) or prepaid methods available at checkout.</li>
-                  <li>All prepaid transactions are processed through secure, encrypted payment gateways.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">4. Shipping &amp; Delivery</h2>
-                <p>
-                  Shipping and delivery terms are outlined in our <a href="/shipping" className="text-muted-gold hover:underline">Shipping &amp; Returns</a> page. By placing an order, you agree to our shipping policies and estimated delivery timelines.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">5. Returns &amp; Refunds</h2>
-                <p>
-                  Returns and refunds are subject to the conditions outlined in our <a href="/shipping" className="text-muted-gold hover:underline">Shipping &amp; Returns</a> page. Sahari Hub reserves the right to refuse returns that do not meet the stated eligibility criteria.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">6. User Responsibilities</h2>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>You are responsible for providing accurate and complete information when placing an order.</li>
-                  <li>You must be at least 18 years of age to make a purchase.</li>
-                  <li>Any misuse of the website, including fraudulent activity, will result in immediate account termination.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">7. Intellectual Property</h2>
-                <p>
-                  All content on this website, including images, logos, text, and design elements, is the property of Sahari Hub and is protected by applicable intellectual property laws. Unauthorized reproduction or use of any content is strictly prohibited.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">8. Limitation of Liability</h2>
-                <p>
-                  Sahari Hub shall not be liable for any indirect, incidental, or consequential damages arising from the use of our website or products. Our total liability for any claim shall not exceed the amount paid for the specific product in question.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">9. Governing Law</h2>
-                <p>
-                  These terms are governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Gurugram, Haryana.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">10. Changes to Terms</h2>
-                <p>
-                  Sahari Hub reserves the right to update these Terms of Service at any time. Changes will be effective immediately upon posting on this page. Your continued use of the website constitutes acceptance of the updated terms.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">11. Contact</h2>
-                <p>
-                  For questions about these terms, contact us at <a href="mailto:hubsahari@gmail.com" className="text-muted-gold hover:underline">hubsahari@gmail.com</a> or call +91 87450 92024.
+                <h2 className="font-cinzel text-xl md:text-2xl text-[#3A2C27] font-semibold mb-2">
+                  Terms of Service Agreement
+                </h2>
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  Welcome to Sahari Hub. By accessing or using our website, you agree to comply with these Terms &amp; Conditions.
                 </p>
               </div>
             </div>
+
+            {/* Terms List */}
+            <div className="space-y-4">
+              <h3 className="font-label-md text-[#3A2C27] font-bold uppercase tracking-wider mb-2">
+                Key Terms &amp; Conditions
+              </h3>
+
+              <div className="space-y-3 text-sm text-gray-700">
+                <div className="flex items-start gap-3 bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                  <CheckCircle2 className="w-5 h-5 text-[#D6A9A3] shrink-0 mt-0.5" />
+                  <span>All products are subject to availability.</span>
+                </div>
+
+                <div className="flex items-start gap-3 bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                  <CheckCircle2 className="w-5 h-5 text-[#D6A9A3] shrink-0 mt-0.5" />
+                  <span>Product prices and offers may change without prior notice.</span>
+                </div>
+
+                <div className="flex items-start gap-3 bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                  <CheckCircle2 className="w-5 h-5 text-[#D6A9A3] shrink-0 mt-0.5" />
+                  <span>Customers are requested to verify product details, size, color, and pricing before placing an order.</span>
+                </div>
+
+                <div className="flex items-start gap-3 bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                  <CheckCircle2 className="w-5 h-5 text-[#D6A9A3] shrink-0 mt-0.5" />
+                  <span>Orders are confirmed only after successful payment.</span>
+                </div>
+
+                <div className="flex items-start gap-3 bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                  <CheckCircle2 className="w-5 h-5 text-[#D6A9A3] shrink-0 mt-0.5" />
+                  <span>Sahari Hub reserves the right to cancel or refuse any order due to pricing errors, stock unavailability, or other unforeseen circumstances.</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </FadeIn>
       </section>

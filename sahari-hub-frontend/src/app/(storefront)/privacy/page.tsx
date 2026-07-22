@@ -1,90 +1,80 @@
 "use client";
 
 import { FadeIn } from "@/components/animations/FadeIn";
-import { Shield } from "lucide-react";
+import { ShieldCheck, Lock, Eye, FileText } from "lucide-react";
 
 export default function PrivacyPage() {
   return (
     <>
       <section className="w-full pt-16 pb-8 px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center">
         <FadeIn>
-          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
+          <h1 className="font-cinzel text-3xl md:text-5xl text-[#3A2C27] mb-4 font-semibold tracking-wide">
             Privacy Policy
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Your privacy is important to us. This policy outlines how we collect, use, and protect your information.
+          <p className="font-body-lg text-body-lg text-gray-600 max-w-2xl mx-auto">
+            At Sahari Hub, we value your privacy and are committed to protecting your personal information.
           </p>
-          <p className="font-body-sm text-on-surface-variant mt-2">Last updated: July 2026</p>
         </FadeIn>
       </section>
 
-      <section className="w-full px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-24">
+      <section className="w-full px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-24 max-w-4xl">
         <FadeIn delay={0.1}>
-          <div className="bg-background border border-surface-container rounded-xl shadow-sm p-8 md:p-12">
-            <div className="font-body-md text-on-surface-variant leading-relaxed space-y-8">
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">1. Information We Collect</h2>
-                <p className="mb-3">When you use our website or place an order, we may collect the following information:</p>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Full name, email address, and phone number</li>
-                  <li>Shipping and billing address</li>
-                  <li>Payment information (processed securely through our payment partners)</li>
-                  <li>Order history and preferences</li>
-                  <li>Device and browser information for website optimization</li>
-                </ul>
+          <div className="bg-white border border-[#EAE3DC] rounded-2xl shadow-sm p-6 md:p-12 space-y-8">
+            
+            {/* Header intro */}
+            <div className="flex items-start gap-4 pb-6 border-b border-[#F3EBE7]">
+              <div className="w-12 h-12 bg-[#F3EBE7] rounded-full flex items-center justify-center text-[#3A2C27] shrink-0">
+                <ShieldCheck className="w-6 h-6" />
               </div>
-
               <div>
-                <h2 className="font-headline-md text-primary mb-3">2. How We Use Your Information</h2>
-                <p className="mb-3">We use your information for the following purposes:</p>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>To process and fulfill your orders</li>
-                  <li>To communicate order status, shipping updates, and delivery information</li>
-                  <li>To provide customer support and respond to your inquiries</li>
-                  <li>To improve our website, products, and services</li>
-                  <li>To send promotional offers and newsletters (only with your consent)</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">3. Data Protection</h2>
-                <p>
-                  We implement appropriate security measures to protect your personal information. Your data is stored securely and is only accessed by authorized personnel who need it to perform their duties. We do not sell, trade, or rent your personal information to third parties.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">4. Cookies</h2>
-                <p>
-                  Our website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. You can control cookie preferences through your browser settings.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">5. Third-Party Services</h2>
-                <p>
-                  We may use trusted third-party services for payment processing, analytics, and shipping. These services have access to your information only to perform specific tasks on our behalf and are obligated to protect your data.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">6. Your Rights</h2>
-                <p className="mb-3">You have the right to:</p>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Access the personal information we hold about you</li>
-                  <li>Request correction of inaccurate data</li>
-                  <li>Request deletion of your personal data</li>
-                  <li>Opt out of marketing communications at any time</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="font-headline-md text-primary mb-3">7. Contact Us</h2>
-                <p>
-                  If you have any questions about this privacy policy or how we handle your data, please contact us at <a href="mailto:hubsahari@gmail.com" className="text-muted-gold hover:underline">hubsahari@gmail.com</a> or call us at +91 87450 92024.
+                <h2 className="font-cinzel text-xl md:text-2xl text-[#3A2C27] font-semibold mb-2">
+                  Our Commitment to Your Privacy
+                </h2>
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  At Sahari Hub, we value your privacy and are committed to protecting your personal information.
                 </p>
               </div>
             </div>
+
+            {/* Information Collection */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <FileText className="w-4 h-4 text-[#D6A9A3]" />
+                <h3 className="font-label-md text-[#3A2C27] font-bold uppercase tracking-wider">
+                  Information Collection
+                </h3>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                We collect only the information required to process your orders, including your <strong>name, contact number, email address, shipping address, and payment details</strong>.
+              </p>
+            </div>
+
+            {/* Information Security */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <Lock className="w-4 h-4 text-[#D6A9A3]" />
+                <h3 className="font-label-md text-[#3A2C27] font-bold uppercase tracking-wider">
+                  Information Security &amp; Sharing
+                </h3>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                Your personal information is kept secure and is <strong>never sold, rented, or shared</strong> with third parties, except when necessary to process your order or comply with legal requirements.
+              </p>
+            </div>
+
+            {/* User Consent */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <Eye className="w-4 h-4 text-[#D6A9A3]" />
+                <h3 className="font-label-md text-[#3A2C27] font-bold uppercase tracking-wider">
+                  Consent
+                </h3>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed bg-[#F9F6F3] p-4 rounded-xl border border-[#EAE3DC]">
+                By using our website, you agree to the collection and use of your information as described in this Privacy Policy.
+              </p>
+            </div>
+
           </div>
         </FadeIn>
       </section>
