@@ -8,7 +8,7 @@ export function Footer() {
         {/* Brand */}
         <div className="col-span-1 md:col-span-1 flex flex-col justify-between items-start">
           <Link href="/" className="flex items-center justify-center -ml-4 md:-ml-2 mb-4">
-            <img src="/logo.jpg" alt="Sahari Hub Logo" className="h-12 w-auto mix-blend-multiply" />
+            <img src="/logo.jpg" alt="Sahari Hub Logo" className="h-14 w-14 rounded-full object-cover shadow-sm border border-white/80" />
           </Link>
           <div className="font-body-md text-xs text-on-surface-variant opacity-80 mt-auto">
             © {new Date().getFullYear()} Sahari Hub. All Rights Reserved.

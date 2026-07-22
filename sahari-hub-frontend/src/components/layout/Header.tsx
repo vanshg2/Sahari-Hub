@@ -44,24 +44,28 @@ export function Header() {
           scrolled ? "bg-surface-container/95 backdrop-blur-md shadow-sm" : "bg-surface-container/90 backdrop-blur-md"
         }`}
       >
-        <div className="flex justify-between items-center px-gutter-mobile md:px-margin-desktop h-20 max-w-[1440px] mx-auto">
+        <div className="flex justify-between items-center px-gutter-mobile md:px-margin-desktop h-20 md:h-24 max-w-[1440px] mx-auto">
           
-          {/* Menu Toggle (Always Visible for Luxury Feel) */}
+          {/* Menu Toggle (3 lines only) */}
           <div className="flex-1 flex justify-start">
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
-              className="text-primary p-2 hover:bg-surface-container-low/50 rounded-full transition-all duration-200 flex items-center gap-2 group"
+              className="text-primary p-2 hover:bg-surface-container-low/50 rounded-full transition-all duration-200 flex items-center justify-center group"
+              aria-label="Open Menu"
             >
-              <Menu className="w-5 h-5 transition-transform group-hover:scale-110" />
-              <span className="hidden md:block text-[10px] font-bold tracking-[0.25em] uppercase mt-[2px]">MENU</span>
+              <Menu className="w-6 h-6 md:w-7 md:h-7 transition-transform group-hover:scale-110" />
             </button>
           </div>
           
           {/* Brand - Centered */}
           <div className="flex-1 flex justify-center">
             <Link href="/" className="flex items-center justify-center gap-3">
-              <img src="/logo.jpg" alt="Sahari Hub Logo" className="h-16 w-auto mix-blend-multiply" />
-              <span className="font-display-lg text-[#3A2C27] text-2xl font-semibold tracking-widest hidden sm:block">
+              <img 
+                src="/logo.jpg" 
+                alt="Sahari Hub Logo" 
+                className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full object-cover shadow-md border-2 border-white/80" 
+              />
+              <span className="font-display-lg text-[#3A2C27] text-2xl md:text-3xl font-semibold tracking-widest hidden sm:block">
                 SAHARI HUB
               </span>
             </Link>
@@ -72,11 +76,12 @@ export function Header() {
             <button 
               onClick={() => setIsSearchOpen(true)}
               className="p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center"
+              aria-label="Search"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            <Link href="/cart" className="p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center relative">
-              <ShoppingBag className="w-5 h-5" />
+            <Link href="/cart" className="p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center relative" aria-label="Cart">
+              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
               {totalItems > 0 && (
                 <span className="absolute top-1 right-1 bg-[#3A2C27] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
                   {totalItems > 9 ? "9+" : totalItems}
