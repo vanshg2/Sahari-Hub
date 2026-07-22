@@ -25,12 +25,12 @@ const categories = [
 
 export function CategoryCards() {
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-4 md:px-margin-desktop py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto px-4 md:px-margin-desktop py-2 md:py-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
         {categories.map((category, idx) => (
           <div 
             key={idx} 
-            className="group relative bg-[#F5F2ED] rounded-2xl overflow-hidden flex items-center h-40 md:h-48 cursor-pointer transition-transform hover:-translate-y-1 shadow-sm hover:shadow-md"
+            className="group relative bg-[#F5F2ED] rounded-2xl overflow-hidden flex items-center h-32 sm:h-36 md:h-40 cursor-pointer transition-transform hover:-translate-y-1 shadow-sm hover:shadow-md"
           >
             {/* Image side */}
             <div className="relative w-2/5 h-full">
@@ -43,9 +43,9 @@ export function CategoryCards() {
             </div>
             
             {/* Text side */}
-            <div className="w-3/5 p-6 flex flex-col justify-center">
-              <h3 className="font-display-lg text-2xl text-[#3A2C27] mb-1">{category.title}</h3>
-              <p className="text-gray-600 text-sm mb-4 font-medium">{category.subtitle}</p>
+            <div className="w-3/5 p-4 sm:p-5 flex flex-col justify-center">
+              <h3 className="font-display-lg text-xl md:text-2xl text-[#3A2C27] mb-0.5">{category.title}</h3>
+              <p className="text-gray-600 text-xs md:text-sm mb-2 sm:mb-3 font-medium">{category.subtitle}</p>
               
               <Link 
                 href={category.href}
