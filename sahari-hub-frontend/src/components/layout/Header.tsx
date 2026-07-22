@@ -65,7 +65,7 @@ export function Header() {
                 alt="Sahari Hub Logo" 
                 className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full object-cover shadow-md border-2 border-white/80" 
               />
-              <span className="font-display-lg text-[#3A2C27] text-2xl md:text-3xl font-semibold tracking-widest hidden sm:block">
+              <span className="font-cinzel text-[#3A2C27] text-2xl md:text-3xl font-semibold tracking-[0.2em] hidden sm:block">
                 SAHARI HUB
               </span>
             </Link>

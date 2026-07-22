@@ -69,6 +69,8 @@
   --font-label-sm: "Montserrat", sans-serif;
   --font-headline-lg: "Bodoni Moda", serif;
   --font-display-lg-mobile: "Bodoni Moda", serif;
+  --font-cinzel: var(--font-cinzel), "Cinzel", serif;
+  --font-cormorant: var(--font-cormorant), "Cormorant Garamond", serif;
 }
 
 @layer base {
@@ -118,6 +120,9 @@
   .text-body-md { font-size: 16px; line-height: 24px; font-weight: 400; }
   .text-label-md { font-size: 14px; line-height: 20px; font-weight: 600; letter-spacing: 0.05em; }
   .text-label-sm { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; }
+
+  .font-cinzel { font-family: var(--font-cinzel), "Cinzel", serif; }
+  .font-cormorant { font-family: var(--font-cormorant), "Cormorant Garamond", serif; }
 
   @keyframes marquee {
     0% { transform: translateX(0%); }
