@@ -107,13 +107,21 @@ export function Header() {
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between p-6 border-b border-surface-container">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="font-display-lg-mobile text-primary text-xl">
-              Sahari Hub
+          <div className="flex items-center justify-between p-5 border-b border-surface-container">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3">
+              <img 
+                src="/logo.jpg" 
+                alt="Sahari Hub Logo" 
+                className="h-10 w-10 rounded-full object-cover shadow-sm border border-white/80 shrink-0" 
+              />
+              <span className="font-cinzel text-[#3A2C27] text-lg font-semibold tracking-[0.15em]">
+                SAHARI HUB
+              </span>
             </Link>
             <button 
               onClick={() => setIsMobileMenuOpen(false)}
               className="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-low transition-colors"
+              aria-label="Close Menu"
             >
               <X className="w-5 h-5" />
             </button>
