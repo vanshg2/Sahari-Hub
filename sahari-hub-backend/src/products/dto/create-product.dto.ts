@@ -50,6 +50,10 @@ export class CreateProductDto {
   compareAtPrice?: number;
 
   @IsOptional()
+  @IsString()
+  badge?: string;
+
+  @IsOptional()
   @IsNumber()
   @Min(0)
   stockQuantity?: number;
@@ -95,6 +99,10 @@ export class UpdateProductDto {
   @IsNumber()
   @Min(0)
   compareAtPrice?: number;
+
+  @IsOptional()
+  @IsString()
+  badge?: string;
 
   @IsOptional()
   @IsNumber()

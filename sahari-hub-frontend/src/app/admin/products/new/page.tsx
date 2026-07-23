@@ -23,6 +23,7 @@ export default function AdminNewProduct() {
     compareAtPrice: "",
     stockQuantity: "",
     categoryId: "",
+    badge: "",
     isPublished: true,
   });
 
@@ -50,6 +51,7 @@ export default function AdminNewProduct() {
         description: form.description,
         price: parseFloat(form.price) || 0,
         compareAtPrice: form.compareAtPrice ? parseFloat(form.compareAtPrice) : undefined,
+        badge: form.badge || undefined,
         stockQuantity: form.stockQuantity ? parseInt(form.stockQuantity) : undefined,
         categoryId: form.categoryId,
         isPublished: form.isPublished,
@@ -192,6 +194,23 @@ export default function AdminNewProduct() {
                 className="w-full p-4 bg-surface-container-low border border-outline-variant/30 rounded-md font-body-md text-primary focus:outline-none focus:border-muted-gold transition-colors"
                 placeholder="0"
               />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="font-label-sm uppercase tracking-widest text-on-surface-variant">Product Tag / Badge</label>
+              <select
+                name="badge"
+                value={form.badge}
+                onChange={handleChange}
+                className="w-full p-4 bg-surface-container-low border border-outline-variant/30 rounded-md font-body-md text-primary focus:outline-none focus:border-muted-gold transition-colors"
+              >
+                <option value="">None</option>
+                <option value="SALE">SALE</option>
+                <option value="NEW ARRIVAL">NEW ARRIVAL</option>
+                <option value="BEST SELLER">BEST SELLER</option>
+                <option value="LIMITED EDITION">LIMITED EDITION</option>
+                <option value="FEATURED">FEATURED</option>
+                <option value="TRENDING">TRENDING</option>
+              </select>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ export interface Product {
   description: string;
   price: number;
   compareAtPrice?: number | null;
+  badge?: string | null;
   stockQuantity: number;
   isPublished: boolean;
   categoryId: string;

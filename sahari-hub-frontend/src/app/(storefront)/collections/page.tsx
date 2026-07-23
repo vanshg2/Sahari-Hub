@@ -31,52 +31,71 @@ const collections = [
 
 export default function CollectionsIndex() {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-4 flex flex-col items-center bg-background">
+    <div className="min-h-screen pt-24 md:pt-32 pb-24 px-4 flex flex-col items-center bg-[#FAF8F5]">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-2xl mb-16"
       >
-        <span className="font-label-sm uppercase tracking-widest text-muted-gold mb-4 block">Curated Selection</span>
-        <h1 className="font-display-lg text-primary leading-tight mb-6">Our Collections</h1>
-        <p className="font-body-lg text-on-surface-variant">
+        <span className="font-label-sm uppercase tracking-[0.3em] text-[#D6A9A3] font-bold text-xs md:text-sm mb-3 block">
+          Curated Selection
+        </span>
+        <h1 className="font-cinzel text-3xl md:text-5xl text-[#3A2C27] font-semibold tracking-wide mb-4">
+          Our Collections
+        </h1>
+        <div className="w-16 h-0.5 bg-[#D6A9A3] mx-auto mb-6"></div>
+        <p className="font-body-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
           Explore our exclusive range of luxury women&apos;s handbags, designer dresses, and ethnic suits.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {collections.map((item) => (
-          <Link 
-            key={item.id} 
-            href={item.href} 
-            className="group block relative overflow-hidden rounded-2xl aspect-[3/4] bg-surface-container-low shadow-sm hover:shadow-xl transition-all duration-500"
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-6xl">
+        {collections.map((item, idx) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.15 }}
           >
-            {/* Background Image */}
-            <Image 
-              src={item.image} 
-              alt={item.title}
-              fill
-              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 33vw"
-              priority
-            />
-
-            {/* Gradient Overlays for Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 z-10 transition-opacity duration-500 group-hover:from-black/90"></div>
-
-            {/* Content Container */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-              <span className="text-xs uppercase tracking-widest text-muted-gold font-medium mb-1 opacity-90">
-                {item.description}
-              </span>
-              <h2 className="font-display-md text-2xl text-white mb-4 group-hover:-translate-y-1 transition-transform duration-500 ease-out">
-                {item.title}
-              </h2>
-              <div className="flex items-center text-muted-gold font-label-md uppercase text-xs tracking-widest gap-2 group-hover:text-white transition-colors duration-300">
-                Shop Now <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Link 
+              href={item.href} 
+              className="group block relative overflow-hidden rounded-2xl aspect-[3/4] bg-[#F5F2ED] border border-[#EAE3DC] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5"
+            >
+              {/* Top Badge */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-white/90 backdrop-blur-md text-[#3A2C27] font-bold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-white/50">
+                  {item.id.toUpperCase()}
+                </span>
               </div>
-            </div>
-          </Link>
+
+              {/* Background Image */}
+              <Image 
+                src={item.image} 
+                alt={item.title}
+                fill
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority
+              />
+
+              {/* Gradient Overlay for Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1412]/90 via-[#1A1412]/40 to-transparent z-10 transition-opacity duration-500 group-hover:from-[#1A1412]/95"></div>
+
+              {/* Content Container */}
+              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-20">
+                <h2 className="font-cinzel text-2xl md:text-3xl text-white font-semibold mb-1 group-hover:-translate-y-1 transition-transform duration-500 ease-out">
+                  {item.title}
+                </h2>
+                <p className="text-xs md:text-sm text-[#EAE3DC] font-light mb-5 line-clamp-1">
+                  {item.description}
+                </p>
+
+                <div className="inline-flex items-center self-start gap-2 bg-[#3A2C27]/80 group-hover:bg-[#D6A9A3] text-white text-xs font-bold uppercase tracking-widest px-4 py-2.5 rounded-lg border border-white/20 transition-all duration-300 shadow-sm">
+                  Explore Collection <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </div>

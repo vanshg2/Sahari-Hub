@@ -58,11 +58,22 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         )}
         
 
-        {product.compareAtPrice && product.compareAtPrice > product.price && (
-          <span className="absolute top-3 left-3 bg-red-500 text-white font-label-sm text-[10px] uppercase px-2 py-1 rounded-sm shadow-sm z-20">
-            Sale
-          </span>
-        )}
+        {(() => {
+          const badgeText = product.badge || (product.compareAtPrice && product.compareAtPrice > product.price ? "SALE" : null);
+          if (!badgeText) return null;
+          
+          let badgeColor = "bg-[#3A2C27] text-white";
+          const uppercaseBadge = badgeText.toUpperCase();
+          if (uppercaseBadge.includes("SALE")) badgeColor = "bg-red-500 text-white";
+          else if (uppercaseBadge.includes("NEW")) badgeColor = "bg-[#3A2C27] text-white";
+          else if (uppercaseBadge.includes("BEST") || uppercaseBadge.includes("TRENDING") || uppercaseBadge.includes("FEATURED")) badgeColor = "bg-[#D6A9A3] text-white";
+
+          return (
+            <span className={`absolute top-3 left-3 ${badgeColor} font-label-sm text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-sm shadow-sm z-20`}>
+              {badgeText}
+            </span>
+          );
+        })()}
       </Link>
       
       <div className="flex flex-col items-center text-center w-full gap-1">

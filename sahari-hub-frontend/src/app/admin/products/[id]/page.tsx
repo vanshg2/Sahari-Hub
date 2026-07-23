@@ -26,6 +26,7 @@ export default function AdminEditProduct({ params }: { params: Promise<{ id: str
     compareAtPrice: "",
     stockQuantity: "",
     categoryId: "",
+    badge: "",
     isPublished: true,
   });
 
@@ -44,6 +45,7 @@ export default function AdminEditProduct({ params }: { params: Promise<{ id: str
         compareAtPrice: prod.compareAtPrice ? String(prod.compareAtPrice) : "",
         stockQuantity: String(prod.stockQuantity),
         categoryId: prod.categoryId,
+        badge: prod.badge || "",
         isPublished: prod.isPublished,
       });
       // Map existing product images to the uploader format
@@ -80,6 +82,7 @@ export default function AdminEditProduct({ params }: { params: Promise<{ id: str
         description: form.description,
         price: parseFloat(form.price) || 0,
         compareAtPrice: form.compareAtPrice ? parseFloat(form.compareAtPrice) : undefined,
+        badge: form.badge || undefined,
         stockQuantity: form.stockQuantity ? parseInt(form.stockQuantity) : undefined,
         categoryId: form.categoryId,
         isPublished: form.isPublished,
@@ -199,6 +202,23 @@ export default function AdminEditProduct({ params }: { params: Promise<{ id: str
               <label className="font-label-sm uppercase tracking-widest text-on-surface-variant">Stock Quantity</label>
               <input type="number" name="stockQuantity" min="0" value={form.stockQuantity} onChange={handleChange}
                 className="w-full p-4 bg-surface-container-low border border-outline-variant/30 rounded-md font-body-md text-primary focus:outline-none focus:border-muted-gold transition-colors" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="font-label-sm uppercase tracking-widest text-on-surface-variant">Product Tag / Badge</label>
+              <select
+                name="badge"
+                value={form.badge}
+                onChange={handleChange}
+                className="w-full p-4 bg-surface-container-low border border-outline-variant/30 rounded-md font-body-md text-primary focus:outline-none focus:border-muted-gold transition-colors"
+              >
+                <option value="">None</option>
+                <option value="SALE">SALE</option>
+                <option value="NEW ARRIVAL">NEW ARRIVAL</option>
+                <option value="BEST SELLER">BEST SELLER</option>
+                <option value="LIMITED EDITION">LIMITED EDITION</option>
+                <option value="FEATURED">FEATURED</option>
+                <option value="TRENDING">TRENDING</option>
+              </select>
             </div>
           </div>
         </div>
