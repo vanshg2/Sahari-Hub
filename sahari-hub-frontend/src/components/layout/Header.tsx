@@ -39,51 +39,57 @@ export function Header() {
 
   return (
     <>
+      {/* Announcement Bar */}
+      <div className="bg-[#3A2C27] text-white py-2 px-4 text-center font-label-sm text-[10px] sm:text-xs tracking-[0.2em] uppercase font-medium flex items-center justify-center gap-2">
+        <span className="inline-block w-2 h-2 rounded-full bg-[#D6A9A3] animate-pulse"></span>
+        <span>Free Express Shipping Across India &bull; Easy Exchanges &bull; COD Available</span>
+      </div>
+
       <header
-        className={`sticky top-0 w-full z-50 transition-all duration-300 border-b border-outline-variant/30 ${
-          scrolled ? "bg-surface-container/95 backdrop-blur-md shadow-sm" : "bg-surface-container/90 backdrop-blur-md"
+        className={`sticky top-0 w-full z-50 transition-all duration-300 border-b border-[#EAE3DC] ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white/90 backdrop-blur-md shadow-sm"
         }`}
       >
-        <div className="flex justify-between items-center px-gutter-mobile md:px-margin-desktop h-20 md:h-24 max-w-[1440px] mx-auto">
+        <div className="flex justify-between items-center px-gutter-mobile md:px-margin-desktop h-16 sm:h-20 md:h-24 max-w-[1440px] mx-auto">
           
-          {/* Menu Toggle (3 lines only) */}
+          {/* Menu Toggle */}
           <div className="flex-1 flex justify-start">
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
-              className="text-primary p-2 hover:bg-surface-container-low/50 rounded-full transition-all duration-200 flex items-center justify-center group"
+              className="text-[#3A2C27] p-2.5 hover:bg-[#FAF8F5] rounded-full transition-all duration-200 flex items-center justify-center group border border-transparent hover:border-[#EAE3DC]"
               aria-label="Open Menu"
             >
-              <Menu className="w-6 h-6 md:w-7 md:h-7 transition-transform group-hover:scale-110" />
+              <Menu className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:scale-110" />
             </button>
           </div>
           
           {/* Brand - Centered */}
           <div className="flex-1 flex justify-center">
-            <Link href="/" className="flex items-center justify-center gap-3">
+            <Link href="/" className="flex items-center justify-center gap-2.5 sm:gap-3 group">
               <img 
                 src="/logo.jpg" 
                 alt="Sahari Hub Logo" 
-                className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full object-cover shadow-md border-2 border-white/80" 
+                className="h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 rounded-full object-cover shadow-sm border-2 border-white transition-transform group-hover:scale-105" 
               />
-              <span className="font-cinzel text-[#3A2C27] text-2xl md:text-3xl font-semibold tracking-[0.2em] hidden sm:block">
+              <span className="font-cinzel text-[#3A2C27] text-xl sm:text-2xl md:text-3xl font-semibold tracking-[0.2em] hidden sm:block group-hover:text-[#D6A9A3] transition-colors">
                 SAHARI HUB
               </span>
             </Link>
           </div>
           
           {/* Trailing Icons */}
-          <div className="flex-1 flex justify-end items-center gap-2 md:gap-4">
+          <div className="flex-1 flex justify-end items-center gap-2 md:gap-3">
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center"
+              className="p-2.5 text-[#3A2C27] hover:bg-[#FAF8F5] rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center border border-transparent hover:border-[#EAE3DC]"
               aria-label="Search"
             >
-              <Search className="w-5 h-5 md:w-6 md:h-6" />
+              <Search className="w-5 h-5 md:w-5 md:h-5" />
             </button>
-            <Link href="/cart" className="p-2 text-primary hover:bg-surface-container-low/50 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center relative" aria-label="Cart">
-              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
+            <Link href="/cart" className="p-2.5 text-[#3A2C27] hover:bg-[#FAF8F5] rounded-full transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center relative border border-transparent hover:border-[#EAE3DC]" aria-label="Cart">
+              <ShoppingBag className="w-5 h-5 md:w-5 md:h-5" />
               {totalItems > 0 && (
-                <span className="absolute top-1 right-1 bg-[#3A2C27] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
+                <span className="absolute top-0.5 right-0.5 bg-[#D6A9A3] text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold shadow-sm">
                   {totalItems > 9 ? "9+" : totalItems}
                 </span>
               )}

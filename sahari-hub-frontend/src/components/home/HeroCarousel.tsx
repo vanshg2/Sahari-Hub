@@ -89,24 +89,24 @@ export function HeroCarousel() {
               
               {/* Text Side */}
               <div className="flex-1 flex flex-col items-start justify-center pt-4 sm:pt-6 md:pt-0 z-10 w-full">
-                <span className={`inline-block px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-white rounded-full uppercase mb-1.5 sm:mb-2.5 ${slide.tagColor}`}>
+                <span className={`inline-block px-3 py-1 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white rounded-full uppercase mb-2 sm:mb-3 ${slide.tagColor} shadow-sm`}>
                   {slide.tag}
                 </span>
                 
-                <h1 className="font-display-lg text-xl sm:text-3xl md:text-4xl lg:text-5xl text-[#3A2C27] leading-tight mb-1">
+                <h1 className="font-cinzel text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#3A2C27] font-semibold leading-tight mb-1">
                   {slide.title}
                 </h1>
-                <h2 className="font-display-lg italic text-xl sm:text-3xl md:text-4xl lg:text-4xl text-[#3A2C27] font-light mb-2 sm:mb-3 flex items-center gap-2">
+                <h2 className="font-cinzel italic text-xl sm:text-3xl md:text-4xl lg:text-4xl text-[#3A2C27] font-light mb-2 sm:mb-4 flex items-center gap-2">
                   {slide.subtitle}
                 </h2>
                 
-                <p className="text-gray-700 text-xs sm:text-sm md:text-base mb-2 sm:mb-4 font-medium">
+                <p className="text-gray-700 text-xs sm:text-sm md:text-base mb-3 sm:mb-5 font-medium leading-relaxed">
                   {slide.description}
                 </p>
                 
                 <Link 
                   href={slide.link}
-                  className="px-4 py-2 sm:px-6 sm:py-2.5 bg-[#3A2C27] text-white text-xs sm:text-xs font-semibold tracking-widest uppercase hover:bg-black transition-colors rounded-sm shadow-md hover:shadow-lg mb-2 md:mb-0"
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#3A2C27] hover:bg-[#D6A9A3] text-white text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-md shadow-md hover:shadow-xl mb-2 md:mb-0 hover:-translate-y-0.5"
                 >
                   {slide.linkText}
                 </Link>
