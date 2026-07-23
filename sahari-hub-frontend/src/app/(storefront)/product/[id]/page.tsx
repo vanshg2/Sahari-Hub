@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { Heart, Star, ChevronRight, Truck, RefreshCw, Plus, Minus } from "lucide-react";
+import { Star, ChevronRight, Truck, RefreshCw, Plus, Minus } from "lucide-react";
 import { productsApi } from "@/lib/api";
 import { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
@@ -105,9 +105,7 @@ export default function ProductDetails() {
                   priority
                 />
               )}
-              <button className="absolute top-4 right-4 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-white shadow-sm transition-all z-20">
-                <Heart className="w-6 h-6" />
-              </button>
+
             </div>
             {product.images.length > 1 && (
               <div className="grid grid-cols-4 gap-4">
@@ -179,15 +177,15 @@ export default function ProductDetails() {
               <div className="flex items-start gap-4">
                 <Truck className="w-6 h-6 text-muted-gold flex-shrink-0" />
                 <div>
-                  <h4 className="font-label-md text-primary uppercase tracking-widest mb-1">Free Premium Shipping</h4>
-                  <p className="font-body-md text-on-surface-variant text-sm">Complimentary express delivery on all orders over ₹2,000.</p>
+                  <h4 className="font-label-md text-primary uppercase tracking-widest mb-1">Free Express Shipping</h4>
+                  <p className="font-body-md text-on-surface-variant text-sm">Complimentary delivery on all orders across India.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <RefreshCw className="w-6 h-6 text-muted-gold flex-shrink-0" />
                 <div>
-                  <h4 className="font-label-md text-primary uppercase tracking-widest mb-1">30-Day Returns</h4>
-                  <p className="font-body-md text-on-surface-variant text-sm">Seamless returns via our concierge service.</p>
+                  <h4 className="font-label-md text-primary uppercase tracking-widest mb-1">7-Day Easy Exchange</h4>
+                  <p className="font-body-md text-on-surface-variant text-sm">Hassle-free exchange policy for damaged or defective items.</p>
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, Minus, Plus } from "lucide-react";
+import { ShoppingBag, Minus, Plus } from "lucide-react";
 import { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/lib/cart-context";
@@ -57,12 +57,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
         )}
         
-        <button
-          onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-          className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-white shadow-sm transition-all z-20"
-        >
-          <Heart className="w-4 h-4" />
-        </button>
+
         {product.compareAtPrice && product.compareAtPrice > product.price && (
           <span className="absolute top-3 left-3 bg-red-500 text-white font-label-sm text-[10px] uppercase px-2 py-1 rounded-sm shadow-sm z-20">
             Sale
