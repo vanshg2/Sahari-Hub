@@ -46,7 +46,7 @@ export default function DressesCollection() {
   return (
     <>
       {/* Page Header */}
-      <section className="w-full pt-16 pb-8 px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center flex flex-col items-center justify-center">
+      <section className="w-full pt-6 md:pt-8 pb-4 px-gutter-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center flex flex-col items-center justify-center">
         <FadeIn>
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
             The Dresses Collection

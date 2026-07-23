@@ -31,20 +31,20 @@ const collections = [
 
 export default function CollectionsIndex() {
   return (
-    <div className="min-h-screen pt-24 md:pt-32 pb-24 px-4 flex flex-col items-center bg-[#FAF8F5]">
+    <div className="min-h-screen pt-6 md:pt-10 pb-16 px-4 flex flex-col items-center bg-[#FAF8F5]">
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center max-w-2xl mb-16"
+        className="text-center max-w-2xl mb-6 md:mb-8"
       >
-        <span className="font-label-sm uppercase tracking-[0.3em] text-[#D6A9A3] font-bold text-xs md:text-sm mb-3 block">
+        <span className="font-label-sm uppercase tracking-[0.3em] text-[#D6A9A3] font-bold text-xs md:text-sm mb-1.5 block">
           Curated Selection
         </span>
-        <h1 className="font-cinzel text-3xl md:text-5xl text-[#3A2C27] font-semibold tracking-wide mb-4">
+        <h1 className="font-cinzel text-3xl md:text-5xl text-[#3A2C27] font-semibold tracking-wide mb-3">
           Our Collections
         </h1>
-        <div className="w-16 h-0.5 bg-[#D6A9A3] mx-auto mb-6"></div>
-        <p className="font-body-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
+        <div className="w-14 h-0.5 bg-[#D6A9A3] mx-auto mb-4"></div>
+        <p className="font-body-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-xs md:text-sm">
           Explore our exclusive range of luxury women&apos;s handbags, designer dresses, and ethnic suits.
         </p>
       </motion.div>
